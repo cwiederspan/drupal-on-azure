@@ -8,7 +8,7 @@ NAME="my-drupal-container"
 LOCATION="WESTUS2"
 
 # Create the Resource Group
-echo "Creating AKS cluster $NAME in $LOCATION..."
+echo "Creating ACI container $NAME in $LOCATION..."
 az group create --name $NAME --location $LOCATION
 
 # Create the ACI container
