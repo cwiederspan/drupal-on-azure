@@ -4,7 +4,7 @@
 echo "Starting job..."
 
 # Set the variables for creating the resources
-CLUSTER_NAME="mlcr-aks-20180823"
+CLUSTER_NAME="my-drupal-cluster"
 CLUSTER_LOCATION="WESTUS2"
 
 # Create the Resource Group

@@ -4,7 +4,7 @@
 echo "Starting job..."
 
 # Set the variables for creating the resources
-NAME="mlcr-drupal01-20180823"
+NAME="my-drupal01-container"
 LOCATION="WESTUS2"
 
 # Create the Resource Group
