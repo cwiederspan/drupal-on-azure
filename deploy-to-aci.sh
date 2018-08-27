@@ -4,7 +4,7 @@
 echo "Starting job..."
 
 # Set the variables for creating the resources
-resource_group="my-drupal01-rg"
+resource_group="my-drupal01-aci-rg"
 name="my-drupal01-aci"
 location="westus2"
 
@@ -18,7 +18,7 @@ while [ $# -gt 0 ]; do
 done
 
 # Create the Resource Group
-echo "Creating ACI container $resource_group\\$name in $location..."
+echo "Creating ACI container $name in group $resource_group in location $location..."
 az group create --name $resource_group --location $location
 
 # Create the ACI container
