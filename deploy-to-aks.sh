@@ -25,7 +25,7 @@ kubectl create -f helm-rbac.yaml
 helm init --service-account tiller
 
 # Sleep for a short amount of time to let Helm/Tiller finish installing
-sleep 30s
+sleep 60s
 
 # Install Drupal using Helm
 helm install stable/drupal --name drupal --namespace drupal01
