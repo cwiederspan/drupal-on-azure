@@ -4,7 +4,8 @@
 echo "Starting job..."
 
 # Set the variables for creating the resources
-name="my-drupal-container"
+resource_group="my-drupal01-rg"
+name="my-drupal01-aci"
 location="westus2"
 
 # Override any of the hard-coded variable names with command line params
@@ -17,8 +18,8 @@ while [ $# -gt 0 ]; do
 done
 
 # Create the Resource Group
-echo "Creating ACI container $name in $location..."
-az group create --name $name --location $location
+echo "Creating ACI container $resource_group\\$name in $location..."
+az group create --name $resource_group --location $location
 
 # Create the ACI container
-az container create --name $name --resource-group $name --location $location --image drupal:latest --ports 80 443 --ip-address Public --dns-name-label $name
+az container create --name $name --resource-group $resource_group --location $location --image drupal:latest --ports 80 443 --ip-address Public --dns-name-label $name
