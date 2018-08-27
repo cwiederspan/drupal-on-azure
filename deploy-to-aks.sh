@@ -8,8 +8,17 @@ resource_group="my-drupal-cluster-rg"
 name="my-drupal-cluster"
 location="westus2"
 
+# Override any of the hard-coded variable names with command line params
+while [ $# -gt 0 ]; do
+    if [[ $1 == *"--"* ]]; then
+        value=$(echo "${1/--/}"|sed "s/-/_/")
+        declare $value="$2"
+    fi
+    shift
+done
+
 # Create the Resource Group
-echo "Creating AKS cluster $name in $location..."
+echo "Creating AKS cluster $name in group $resource_group in location $location..."
 az group create --name $resource_group --location $location
 
 # Create an AKS cluster
