@@ -40,7 +40,7 @@ sleep 60s
 helm install stable/drupal --name drupal --namespace drupal01
 
 # Sleep for a short amount of time to let Helm/Tiller finish installing
-sleep 45s
+sleep 60s
 
 # Echo out the new URL and login information for the Drupal site
 echo http://$(kubectl get svc --namespace drupal01 drupal-drupal -o jsonpath='{.status.loadBalancer.ingress[0].ip}')/
